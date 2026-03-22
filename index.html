@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced Predictive Maintenance System - AI-powered equipment monitoring and maintenance forecasting">
+    <meta name="theme-color" content="#667eea">
+    <title>Predictive Maintenance System - Industrial Equipment Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>⚙️ Predictive Maintenance</h1>
+            <nav>
+                <a href="#dashboard" class="nav-link active">Dashboard</a>
+                <a href="#equipment" class="nav-link">Equipment</a>
+                <a href="#analytics" class="nav-link">Analytics</a>
+                <a href="#maintenance" class="nav-link">History</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Application -->
+    <div id="main-app">
+        <div class="container">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <h2>System Overview</h2>
+
+                <!-- Alerts -->
+                <div class="alerts">
+                    <h3>⚠️ Active Alerts</h3>
+                    <div class="alert-critical">
+                        <strong>CRITICAL:</strong> Pump #3 bearing temperature exceeds threshold. Maintenance required within 24 hours.
+                    </div>
+                    <div class="alert-item">
+                        <strong>WARNING:</strong> Motor #1 vibration levels elevated. Schedule inspection.
+                    </div>
+                    <div class="alert-item">
+                        <strong>INFO:</strong> Predictive model updated. New anomaly detection parameters active.
+                    </div>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="metrics-row">
+                    <div class="metric-box">
+                        <div class="label">Equipment Status</div>
+                        <div class="value" style="color: #28a745;">95%</div>
+                        <div class="label">Operational</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="label">Avg Remaining Useful Life</div>
+                        <div class="value" style="color: #667eea;">847</div>
+                        <div class="label">Days</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="label">Maintenance Cost Saved</div>
+                        <div class="value" style="color: #20c997;">$52.4K</div>
+                        <div class="label">This Year</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="label">Downtime Prevented</div>
+                        <div class="value" style="color: #ff9800;">12.5</div>
+                        <div class="label">Hours</div>
+                    </div>
+                </div>
+
+                <!-- Equipment Status Cards -->
+                <h3>Equipment Status</h3>
+                <div class="dashboard">
+                    <div class="card">
+                        <h3>Pump Unit #1</h3>
+                        <div class="status-grid">
+                            <div class="equipment-item">
+                            <h4>Temperature</h4>
+                            <div class="health-bar">
+                                <div class="health-fill" style="width: 70%;"></div>
+                            </div>
+                            <div class="health-text">72°C / Normal</div>
+                        </div>
+                        <div class="equipment-item">
+                            <h4>Vibration</h4>
+                            <div class="health-bar">
+                                <div class="health-fill" style="width: 85%;"></div>
+                            </div>
+                            <div class="health-text">2.4 mm/s / Good</div>
+                        </div>
+                        <div class="equipment-item">
+                            <h4>Pressure</h4>
+                            <div class="health-bar">
+                                <div class="health-fill" style="width: 90%;"></div>
+                            </div>
+                            <div class="health-text">45 PSI / Normal</div>
+                        </div>
+                        <div class="equipment-item">
+                            <h4>Overall Health</h4>
+                            <div class="health-bar">
+                                <div class="health-fill" style="width: 82%;"></div>
+                            </div>
+                            <div class="health-text">82% / Good</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Motor Unit #2</h3>
+                    <div class="status-grid">
+                        <div class="equipment-item">
+                            <h4>Temperature</h4>
+                            <div class="health-bar">
+                                <div class="health-fill" style="width: 65%;"></div>
+                            </div>
+                            <div class="health-text">68°C / Normal</div>
+                        </div>
+                        <div class="equipment-item">
+                            <h4>Vibration</h4>
+                            <div class="health-bar">
+                                <div class="health-fill " style="width: 92%;"></div>
+                            </div>
+                            <div class="health-text">1.8 mm/s / Excellent</div>
+                        </div>
+                        <div class="equipment-item">
+                            <h4>Current Draw</h4>
+                            <div class="health-bar">
+                                <div class="health-fill" style="width: 78%;"></div>
+                            </div>
+                            <div class="health-text">45A / Normal</div>
+                        </div>
+                        <div class="equipment-item">
+                            <h4>Overall Health</h4>
+                            <div class="health-bar">
+                                <div class="health-fill" style="width: 91%;"></div>
+                            </div>
+                            <div class="health-text">91% / Excellent</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Pump Unit #3</h3>
+                    <div class="status-grid">
+                        <div class="equipment-item critical">
+                            <h4>Temperature</h4>
+                            <div class="health-bar">
+                                <div class="health-fill critical" style="width: 35%;"></div>
+                            </div>
+                            <div class="health-text">95°C / CRITICAL</div>
+                        </div>
+                        <div class="equipment-item warning">
+                            <h4>Vibration</h4>
+                            <div class="health-bar">
+                                <div class="health-fill warning" style="width: 58%;"></div>
+                            </div>
+                            <div class="health-text">4.2 mm/s / Warning</div>
+                        </div>
+                        <div class="equipment-item">
+                            <h4>Pressure</h4>
+                            <div class="health-bar">
+                                <div class="health-fill" style="width: 72%;"></div>
+                            </div>
+                            <div class="health-text">42 PSI / Normal</div>
+                        </div>
+                        <div class="equipment-item critical">
+                            <h4>Overall Health</h4>
+                            <div class="health-bar">
+                                <div class="health-fill critical" style="width: 38%;"></div>
+                            </div>
+                            <div class="health-text">38% / Critical</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipment Details Section -->
+        <section id="equipment" class="section">
+            <h2 style="color: white; margin-bottom: 1.5rem;">Equipment Inventory</h2>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Equipment ID</th>
+                            <th>Type</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Health</th>
+                            <th>RUL (Days)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>PUMP-001</strong></td>
+                            <td>Centrifugal Pump</td>
+                            <td>Building A, Floor 2</td>
+                            <td><span class="status-badge status-good">Operational</span></td>
+                            <td>82%</td>
+                            <td>945</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MOTOR-002</strong></td>
+                            <td>Electric Motor</td>
+                            <td>Building A, Floor 3</td>
+                            <td><span class="status-badge status-good">Operational</span></td>
+                            <td>91%</td>
+                            <td>1220</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PUMP-003</strong></td>
+                            <td>Centrifugal Pump</td>
+                            <td>Building B, Floor 1</td>
+                            <td><span class="status-badge status-critical">At Risk</span></td>
+                            <td>38%</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td><strong>COMPRESSOR-004</strong></td>
+                            <td>Air Compressor</td>
+                            <td>Building C, Floor 1</td>
+                            <td><span class="status-badge status-warning">Maintenance Scheduled</span></td>
+                            <td>65%</td>
+                            <td>325</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MOTOR-005</strong></td>
+                            <td>Electric Motor</td>
+                            <td>Building A, Floor 1</td>
+                            <td><span class="status-badge status-good">Operational</span></td>
+                            <td>88%</td>
+                            <td>780</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="analytics" class="section">
+            <h2 style="color: white; margin-bottom: 1.5rem;">Analytics & Predictions</h2>
+            <div class="dashboard" style="margin-bottom: 2rem;">
+                <div class="card">
+                    <h3>Equipment Health Trend</h3>
+                    <div class="chart-container">
+                        <canvas id="healthChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Temperature Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="temperatureChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard">
+                <div class="card">
+                    <h3>Failure Probability</h3>
+                    <div class="chart-container">
+                        <canvas id="failureChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Maintenance Forecast</h3>
+                    <div class="chart-container">
+                        <canvas id="forecastChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maintenance History Section -->
+        <section id="maintenance" class="section">
+            <h2 style="color: white; margin-bottom: 1.5rem;">Maintenance History</h2>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Equipment</th>
+                            <th>Work Type</th>
+                            <th>Status</th>
+                            <th>Duration (hrs)</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2026-03-22</td>
+                            <td>MOTOR-002</td>
+                            <td>Predictive Inspection</td>
+                            <td><span class="status-badge status-good">Completed</span></td>
+                            <td>2.5</td>
+                            <td>$450</td>
+                        </tr>
+                        <tr>
+                            <td>2026-03-20</td>
+                            <td>PUMP-001</td>
+                            <td>Seal Replacement</td>
+                            <td><span class="status-badge status-good">Completed</span></td>
+                            <td>4.0</td>
+                            <td>$1,200</td>
+                        </tr>
+                        <tr>
+                            <td>2026-03-18</td>
+                            <td>COMPRESSOR-004</td>
+                            <td>Oil Change</td>
+                            <td><span class="status-badge status-good">Completed</span></td>
+                            <td>1.5</td>
+                            <td>$350</td>
+                        </tr>
+                        <tr>
+                            <td>2026-03-15</td>
+                            <td>MOTOR-005</td>
+                            <td>Bearing Lubrication</td>
+                            <td><span class="status-badge status-good">Completed</span></td>
+                            <td>1.0</td>
+                            <td>$200</td>
+                        </tr>
+                        <tr>
+                            <td>2026-03-10</td>
+                            <td>PUMP-001</td>
+                            <td>Vibration Analysis</td>
+                            <td><span class="status-badge status-good">Completed</span></td>
+                            <td>3.0</td>
+                            <td>$600</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Predictive Maintenance System - Powered by Advanced AI Analytics</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
